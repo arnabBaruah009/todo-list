@@ -5,8 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="https://kit.fontawesome.com/c285424b76.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1> <%= title %> loaded</h1>
+    <div id="app-container">
+        <div id="TO-DO">
+            <span>TODO App</span>
+        </div>
+        <form action="/create/task" method="post" id="create-task-form">
+            <div id="div-description">
+                <label for="description-text">DESCRIPTION</label>
+                <input type="text" name="description" placeholder="What do you need to do?" required>
+            </div>
+            <div id="task-info">
+                <div id="div-category">
+                    <label for="category-list">CATEGORY</label>
+                    <select name="category" id="category-list">
+                        <option value="personal">PERSONAL</option>
+                        <option value="work">WORK</option>
+                        <option value="others">OTHERS</option>
+                    </select>
+                </div>
+                <div id="div-date">
+                    <label for="">DUE DATE</label>
+                    <input type="date" name="date">
+                </div>
+            </div>
+        </form>
+        <div id="buttons">
+            <button type="submit" id="submit-btn" form="create-task-form"><i class="fa-solid fa-plus"></i> ADD TASK</button>
+            <button type="button" id="delete-btn" value="Delete"><i class="fa-solid fa-trash"></i> DELETE</button>
+        </div>
+    </div>
 </body>
 </html>

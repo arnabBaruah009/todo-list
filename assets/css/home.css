@@ -1,0 +1,167 @@
+
+body{
+    background-color: grey;
+    position: relative;
+}
+
+#app-container{
+    width: 50vw;
+    height: 80vh;
+    background-color: white;
+    margin: auto;
+}
+
+/* to-do div */
+
+#TO-DO{
+    height: 10%;
+    border-bottom: 2px solid rgb(157, 157, 157);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#TO-DO span{
+    font-size: 4.5vh;
+}
+
+/* form section */
+
+form{
+    height: 25%;
+}
+
+form label{
+    font-size: 2vh;
+    font-family: monospace;
+    display: block;
+    margin-bottom: 1px;
+}
+
+form div{
+    position: relative;
+    box-sizing: border-box;
+}
+
+form input{
+    border: 0px;
+    width: 20vw;
+    font-size: 1rem;
+    color: grey;
+}
+
+/* description */
+#div-description{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 5px;
+    padding-left: 20px;
+    border-bottom: 2px solid rgb(157, 157, 157);
+}
+
+#div-description input{
+    width: 30vw;
+    height: 3.5vh;
+    outline: 0;
+}
+
+/* task-info */
+#task-info{
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid rgb(157, 157, 157);
+}
+
+#task-info span{
+    color: grey;
+}
+
+/* category div */
+#div-category{
+    position: relative;
+    padding-top: 5px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    width: 50%;
+    border-right: 2px solid rgb(157, 157, 157);
+}
+
+#div-category i{
+    color: grey;
+    margin-left: 10px;
+}
+
+.sub-menu{
+    list-style: none;
+    position: absolute;
+    background-color: rgb(114, 114, 114);
+    top: 50%;
+    left: 30%;
+    padding: 5px;
+    width: 100px;
+    border-radius: 5%;
+    z-index: 2;
+}
+
+.sub-menu li{
+    border-bottom: 1px dashed white;
+}
+
+.sub-menu li:last-child{
+    border-bottom: 0;
+}
+
+.sub-menu li a{
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.sub-menu li a:hover {
+    background-color: white;
+    color: black;
+}
+
+.sub-menu{
+    display: none;
+}
+
+/* due date */
+#div-date{
+    padding-top: 5px;
+    padding-left: 20px;
+    box-sizing: border-box;   
+}
+
+/* buttons */
+#buttons{
+    position: relative;
+    height: 15%;
+    border-bottom: 2px solid rgb(157, 157, 157);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttons button{
+    height: 50%;
+    width: 20%;
+    min-width: 20%;
+    margin: 3px;
+    color: aliceblue;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+#submit-btn{
+    background-color: rgb(80, 71, 71);
+    
+}
+
+#delete-btn{
+    background-color: red;
+}
