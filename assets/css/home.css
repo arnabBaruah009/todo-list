@@ -1,15 +1,25 @@
 
 body{
-    background-color: grey;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(255,117,203);
+    background: linear-gradient(0deg, rgba(255,117,203,1) 0%, rgba(255,58,58,1) 100%);
     position: relative;
+    margin: 0;
+    padding-top: 10px;
+    box-sizing: border-box
 }
 
 #app-container{
-    width: 50vw;
+    width: 45vw;
     height: 80vh;
     background-color: white;
     margin: auto;
+    border-radius: 3%;
+    box-shadow: 0 0 40px 0px #111010;
 }
+
+/*-------------------------------------------------------------------*/
 
 /* to-do div */
 
@@ -24,6 +34,8 @@ body{
 #TO-DO span{
     font-size: 4.5vh;
 }
+
+/*-------------------------------------------------------------------*/
 
 /* form section */
 
@@ -45,10 +57,11 @@ form div{
 
 form input{
     border: 0px;
-    width: 20vw;
+    width: 12vw;
     font-size: 1rem;
-    color: grey;
 }
+
+/*-------------------------------------------------------------------*/
 
 /* description */
 #div-description{
@@ -68,6 +81,8 @@ form input{
     outline: 0;
 }
 
+/*-------------------------------------------------------------------*/
+
 /* task-info */
 #task-info{
     height: 50%;
@@ -83,51 +98,71 @@ form input{
 /* category div */
 #div-category{
     position: relative;
-    padding-top: 5px;
-    padding-left: 20px;
+    display: flex;
+    padding: 0px 6%;
     box-sizing: border-box;
     width: 50%;
     border-right: 2px solid rgb(157, 157, 157);
-}
-
-#div-category i{
-    color: grey;
-    margin-left: 10px;
-}
-
-.sub-menu{
-    list-style: none;
-    position: absolute;
-    background-color: rgb(114, 114, 114);
-    top: 50%;
-    left: 30%;
-    padding: 5px;
-    width: 100px;
-    border-radius: 5%;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
     z-index: 2;
 }
 
-.sub-menu li{
-    border-bottom: 1px dashed white;
+#div-category i{
+    transition: all 0.5s;
 }
 
-.sub-menu li:last-child{
-    border-bottom: 0;
+#category-text{
+    outline: 0;
+    height: 80%;
+    font-size: 1.4rem;
+    font-family: system-ui;
+    cursor: pointer;
 }
 
-.sub-menu li a{
-    text-decoration: none;
-    color: white;
-    display: block;
+#category-text::placeholder{
+    font-size: 1.4rem;
 }
 
-.sub-menu li a:hover {
-    background-color: white;
-    color: black;
+#category-list{
+    position: absolute;
+    background: #ff7f84;
+    top: 84%;
+    left: 5%;
+    width: 40%;
+    border-radius: 8px;
+    z-index: 2;
 }
 
-.sub-menu{
-    display: none;
+#category-list ul{
+    list-style: none;
+    padding-left: 0%;
+    margin: 0;
+    border-radius: inherit;
+}
+
+.options{
+    padding-left: 9%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.options p{
+    margin: 0;
+}
+
+.options:hover{
+    border-radius: inherit;
+    background-color: red;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.rotate{
+    transform: rotate(-180deg);
 }
 
 /* due date */
@@ -136,6 +171,14 @@ form input{
     padding-left: 20px;
     box-sizing: border-box;   
 }
+
+#div-date input{
+    outline: 0;
+    border-bottom: 1px dashed grey;
+    margin-top: 5px;
+}
+
+/*-------------------------------------------------------------------*/
 
 /* buttons */
 #buttons{
@@ -147,7 +190,7 @@ form input{
     align-items: center;
 }
 
-#buttons button{
+#submit-btn{
     height: 50%;
     width: 20%;
     min-width: 20%;
@@ -155,13 +198,104 @@ form input{
     color: aliceblue;
     cursor: pointer;
     border-radius: 15px;
+    background: rgb(65,175,251);
+    background: radial-gradient(circle, rgba(65,175,251,1) 0%, rgba(63,82,251,1) 100%);
 }
 
-#submit-btn{
-    background-color: rgb(80, 71, 71);
-    
+/* display section */
+#display-section{
+    height: 49%;
+    overflow-y: scroll;
 }
 
-#delete-btn{
-    background-color: red;
+#display-section::-webkit-scrollbar{
+    display: none;
+}
+
+.list{
+    padding-left: 0%;
+    list-style: none;
+    margin: 0;
+}
+
+.list li:nth-child(2n+1){
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(227,227,227,1) 100%);
+}
+
+.list-item{
+    position: relative;
+    padding-right: 10%;
+    padding-left: 6%;
+    padding-top: 2%;
+    border-bottom: 2px dashed lightgrey;
+    padding-bottom: 4%;
+}
+
+.task-details{
+    display: inline-block;
+}
+
+.task-details p{
+    margin-bottom: 5%;
+    margin-top: 0;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+}
+
+.task-details span{
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    color: grey;
+}
+
+.color-div{
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    height: 25%;
+    width: 25%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.color-div p{
+    margin: 0;
+    font-size: 1rem;
+}
+
+.PERSONAL{
+    background: rgb(167,255,21);
+    background: linear-gradient(90deg, rgba(167,255,21,1) 0%, rgba(250,255,22,1) 100%);
+}
+
+.WORK{
+    background: rgb(255,21,21);
+    background: linear-gradient(90deg, rgba(255,21,21,1) 0%, rgba(255,127,22,1) 100%);
+}
+
+.OTHERS{
+    background: rgb(22,255,248);
+    background: linear-gradient(90deg, rgba(22,255,248,1) 0%, rgba(21,187,255,1) 100%);
+}
+
+/* delete task */
+a{
+    text-decoration: none;
+    position: absolute;
+    top: 48%;
+    left: 84%;
+}
+
+a i{
+    color: red;
+    padding: 3px;
+    border-radius: 50%;
+}
+
+a i:hover{
+    box-shadow: 0 0 4px 4px rgb(15, 239, 255);
 }

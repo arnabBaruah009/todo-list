@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 //connect to the library
-mongoose.connect('mongodb://localhose/to_do_list_db');
+mongoose.connect('mongodb://localhost/to_do_list_db');
 
 //acquire the connection (to check if it is successfull)
 const db = mongoose.connection;

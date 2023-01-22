@@ -5,13 +5,15 @@ const todoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    category: {
+    category:{
         type: String,
         required: true
     },
     dueDate: {
-        type: String,
-        required: false
+        type: String
+    },
+    dueMonth: {
+        type: String
     }
 });
 

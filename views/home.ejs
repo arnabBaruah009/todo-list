@@ -13,19 +13,22 @@
         <div id="TO-DO">
             <span>TODO App</span>
         </div>
-        <form action="/create/task" method="post" id="create-task-form">
+        <form action="/create-task" method="post" id="create-task-form">
             <div id="div-description">
                 <label for="description-text">DESCRIPTION</label>
                 <input type="text" name="description" placeholder="What do you need to do?" required>
             </div>
             <div id="task-info">
                 <div id="div-category">
-                    <label for="category-list">CATEGORY</label>
-                    <select name="category" id="category-list">
-                        <option value="personal">PERSONAL</option>
-                        <option value="work">WORK</option>
-                        <option value="others">OTHERS</option>
-                    </select>
+                    <input type="text" placeholder="CATEGORY" id="category-text" name="category" required>
+                    <i class="fa-solid fa-arrow-up"></i>
+                </div>
+                <div id="category-list" class="hide">
+                    <ul>
+                        <li class="options"><p>PERSONAL</p></li>
+                        <li class="options"><p>WORK</p></li>
+                        <li class="options"><p>OTHERS</p></li>
+                    </ul>
                 </div>
                 <div id="div-date">
                     <label for="">DUE DATE</label>
@@ -35,8 +38,28 @@
         </form>
         <div id="buttons">
             <button type="submit" id="submit-btn" form="create-task-form"><i class="fa-solid fa-plus"></i> ADD TASK</button>
-            <button type="button" id="delete-btn" value="Delete"><i class="fa-solid fa-trash"></i> DELETE</button>
+        </div>
+        <!-- Display tasks -->
+        <div id="display-section">
+            <ul class="list">
+                <% for (let i of task_list) { %>
+                    <li class="list-item">
+                        <div class="task-details">
+                            <p><%= i.description %></p>
+                            <span>
+                                <i class="fa-regular fa-calendar-days"></i>
+                                <%= i.dueDate %>,  &nbsp <%= i.dueMonth %>
+                            </span>
+                        </div>
+                        <div class="<%= i.category %> color-div"><p><%= i.category %></p></div>
+                        <a href="/delete-task/?id=<%= i._id %>">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </li>
+                <% } %>
+            </ul>
         </div>
     </div>
+    <script src="/js/home.js"></script>
 </body>
 </html>
