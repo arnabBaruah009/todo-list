@@ -18,7 +18,7 @@ app.use(express.urlencoded());
 app.use(express.static('assets'));
 
 //routes and controllers
-app.get('/', function(req, res){
+app.get('/arnabbaruah009.github.io/todo-list/', function(req, res){
     List.find({}, function(err, listItem){
         if (err){
             console.log('Error in finding tasks');
